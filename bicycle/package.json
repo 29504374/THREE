@@ -1,0 +1,25 @@
+{
+  "name": "bicycle-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "threejs",
+    "bike"
+  ],
+  "author": "lilei",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "three": "^0.121.1",
+    "three-orbit-controls": "^82.1.0",
+    "three-orbitcontrols": "^2.110.3"
+  }
+}
