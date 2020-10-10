@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import Bicycle from './com/views/Bicycle'
 
 const OrbitControls = require('three-orbit-controls')(THREE);
 var container;
@@ -28,10 +29,12 @@ function globalOnStart() {
     globalAddedlight();
     globalAddedGrid();
     globalAddedOrbitControls();
+    // globalAddedToStage();
 }
 //添加场景
 function globalAddedScene() {
     scene = new THREE.Scene();
+    
 }
 //添加全局摄像机
 function globalAddedCamera() {
@@ -64,6 +67,11 @@ scene.add( axesHelper );
 //渲染
 function globalOnRender() {
     renderer.render(scene, camera);
+    // if (window.ThreeDevTools) {
+    //     window.ThreeDevTools.connect({ scene, renderer });
+    //   }
+    
+    //   console.log(":>>>>>>>>>>>>>>>",window.ThreeDevTools)
 }
 //一直渲染
 function globalGoAnimate() {
@@ -76,6 +84,12 @@ function globalAddedOrbitControls() {
     orbitControls.enableDamping = true
     orbitControls.dampingFactor = 0.25
     orbitControls.enableZoom = false
+}
+//添加物体
+function globalAddedToStage()
+{
+    var bicycle = new Bicycle(scene);
+    bicycle.load('../model/scene.gltf');
 }
 init();
 globalGoAnimate();
